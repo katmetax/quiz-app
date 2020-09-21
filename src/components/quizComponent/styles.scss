@@ -4,4 +4,13 @@
         list-style-type: none;
         padding-inline-start: 0;
     }
+
+    li {
+        cursor: pointer;
+    }
+
+    .active {
+        color: red;
+    }
 }
+

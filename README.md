@@ -1,3 +1,17 @@
+## TODO
+
+[ ]  Add more quiz questions
+
+[ ]  Handle multiple questions in Redux
+
+[ ]  Add tests for Redux actions & reducers
+
+[ ]  Add environment variables
+
+[ ]  Add stricter typing
+
+***
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
