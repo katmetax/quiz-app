@@ -10,6 +10,7 @@ interface questionResponse {
     answer: string;
 }
 
+// TODO: Pass down as props
 const questionData = [
     {
         question: 'What is the capital of Canada?',
@@ -24,7 +25,7 @@ const questionData = [
     }
 ];
 
-const QuizComponent = () => {
+const QuizComponent = (onClick: any) => {
     const dispatch = useDispatch();
     const [currentIndex, setIndex] =  useState(-1);
 
