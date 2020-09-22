@@ -3,7 +3,8 @@ import { Provider } from 'react-redux';
 import configureStore from 'redux-mock-store';
 
 import QuizComponent from './';
-import { mount } from 'enzyme';
+import { mount, shallow } from 'enzyme';
+import { act } from 'react-dom/test-utils';
 
 const mockData = {
     question: 'Question 1',
@@ -19,11 +20,12 @@ describe('QuizComponent', () => {
         const clickHandler = jest.fn();
         const component = mount(
             <Provider store={store}>
-                <QuizComponent onClick={clickHandler} />
+                <QuizComponent />
             </Provider>);
-        const answers = component.find('[data-testid="answers-option"]');
+        const answer = component.find('[data-testid="answers-option"]').first();
 
-        answers.at(1).simulate('click');
+        answer.props().onClick = clickHandler();
+        answer.simulate('click');
 
         expect(clickHandler).toHaveBeenCalled();
     })
