@@ -25,7 +25,7 @@ const questionData = [
     }
 ];
 
-const QuizComponent = (onClick: any) => {
+const QuizComponent = () => {
     const dispatch = useDispatch();
     const [currentIndex, setIndex] =  useState(-1);
 

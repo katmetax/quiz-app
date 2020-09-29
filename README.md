@@ -1,15 +1,34 @@
 ## TODO
 
+**General**
+
 [ ]  Add more quiz questions
+
+**Redux**
 
 [ ]  Handle multiple questions in Redux
 
+[ ]  Create multiple reducers & combine them
+
 [ ]  Add tests for Redux actions & reducers
 
-[ ]  Add environment variables
+**Typescript**
 
 [ ]  Add stricter typing
 
+**Webpack**
+
+[ ]  Add Webpack file 4.0
+[ ]  Add environment variables
+[ ]  Create dev server
+[ ]  Use loaders for SCSS, TSX, JS
+[ ]  Use plugins such as HTMLWebpackPlugin, CSS min
+
+**SSR**
+
+[ ]  Utilise express JS or Next JS to hydrate 
+
+***
 ***
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
