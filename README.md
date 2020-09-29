@@ -2,7 +2,17 @@
 
 **General**
 
-[ ]  Add more quiz questions
+[X]  Add more quiz questions
+
+[ ]  Add multiple steps for the questions to show
+
+[ ]  Create file with correct answers to map against
+
+[ ]  Create results page
+
+[ ]  Add ability to go back/forward on questions with their retained answers
+
+[ ]  Move question data out of App file
 
 **Redux**
 

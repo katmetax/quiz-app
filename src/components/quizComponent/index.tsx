@@ -5,15 +5,16 @@ import { saveAnswer } from '../../store/actions';
 
 import './styles.scss';
 
-// TODO: Pass down as props
-const questionData = [
-    {
-        question: 'What is the capital of Canada?',
-        answers: ['Vancouver', 'Ottawa', 'Toronto']
-    }
-];
+interface quizComponentProps {
+    questionData: Array<questionData>;
+}
 
-const QuizComponent = () => {
+interface questionData {
+    question: string;
+    answers: string[];
+}
+
+const QuizComponent = ( { questionData }: quizComponentProps ) => {
     const dispatch = useDispatch();
     const [currentIndex, setIndex] =  useState(-1);
 
@@ -32,13 +33,13 @@ const QuizComponent = () => {
     return (
         <div className="quiz-container" data-testid="question-root">
             {
-                questionData.map(item => {
+                questionData.map((item: any, i: any) => {
                     return (
                         <>
-                        <h3>{item.question}</h3>
+                        <h3>{i + 1}. {item.question}</h3>
                         <ul data-testid="answers-list">
                         { 
-                            item.answers.map((answer, index) => {
+                            item.answers.map((answer: any, index: any) => {
                                 return (
                                 <li key={index} className={currentIndex === index ? 'active' : ''} onClick={() => clickHandler(item.question, answer, index)} data-testid="answers-option">{answer}</li>
                                 )
