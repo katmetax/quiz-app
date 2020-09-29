@@ -19,14 +19,25 @@
 **Webpack**
 
 [ ]  Add Webpack file 4.0
+
 [ ]  Add environment variables
+
 [ ]  Create dev server
+
 [ ]  Use loaders for SCSS, TSX, JS
+
 [ ]  Use plugins such as HTMLWebpackPlugin, CSS min
 
 **SSR**
 
 [ ]  Utilise express JS or Next JS to hydrate 
+
+***
+***
+
+**check coverage**
+
+`npx jest --coverage --no-cache`
 
 ***
 ***

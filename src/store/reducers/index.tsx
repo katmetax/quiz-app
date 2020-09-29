@@ -1,13 +1,11 @@
 import { SAVE_ANSWER } from "../constants";
 
-const initialState = {
-    quiz: []
-}
+const initialState = '';
 
 const rootReducer = (state = initialState, action: any) => {
     if ( action.type === SAVE_ANSWER ) {
         return Object.assign({}, state, {
-            quiz: state.quiz.concat(action.payload)
+            state: action.payload
         })
     }
     return state;
