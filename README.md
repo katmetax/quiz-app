@@ -22,6 +22,12 @@
 
 [ ]  Add tests for Redux actions & reducers
 
+**Jest**
+
+[ ]  Add tests for Redux reducers
+
+[ ]  Continue to write tests for additional components
+
 **Typescript**
 
 [ ]  Add stricter typing
