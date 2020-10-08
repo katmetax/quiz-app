@@ -4,7 +4,7 @@
 
 [X]  Add more quiz questions
 
-[ ]  Add multiple steps for the questions to show
+[X]  Add multiple steps for the questions to show
 
 [ ]  Create file with correct answers to map against
 
@@ -16,7 +16,7 @@
 
 **Redux**
 
-[ ]  Handle multiple questions in Redux
+[X]  Handle multiple questions and dedupe logic in Redux reducer
 
 [ ]  Create multiple reducers & combine them
 
@@ -24,7 +24,7 @@
 
 **Jest**
 
-[ ]  Add tests for Redux reducers
+[X]  Add Jest test for quiz component
 
 [ ]  Continue to write tests for additional components
 
