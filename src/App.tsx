@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.scss';
 import QuizComponent from './components/quizComponent';
-import { questionData } from './questionData';
+import { questionData } from './data/questionData';
 
 const App = () => {
   return (

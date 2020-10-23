@@ -20,17 +20,19 @@ const QuizComponent = ( { questionData }: quizComponentProps ) => {
     const [pageNumber, setPageNumber] = useState(0);
     const quizState = useSelector(state => state);
 
-    const clickHandler = (question: string, answer: string, answerIndex: number, questionNo: number) => {
-        selectedAnswer(question, answer, questionNo, answerIndex);
+    const clickHandler = (question: string, answer: string, answerIndex: number, questionNo: number, correctAnswer: string) => {
+        const answeredCorrectly = correctAnswer === answer;
+        selectedAnswer(question, answer, questionNo, answerIndex, answeredCorrectly);
         setIndex(answerIndex);
     }
 
-    const selectedAnswer = (question: string, answer: string, questionNo: number, answerIndex: number) => {
+    const selectedAnswer = (question: string, answer: string, questionNo: number, answerIndex: number, answeredCorrectly: boolean) => {
         return dispatch(saveAnswer({ 
             question, 
             answer,
             questionNo,
-            answerIndex
+            answerIndex,
+            answeredCorrectly
         }))
     };
 
@@ -64,7 +66,7 @@ const QuizComponent = ( { questionData }: quizComponentProps ) => {
                         { 
                             item.answers.map((answer: any, answerIndex: any) => {
                                 return (
-                                <li key={answerIndex} className={currentIndex === answerIndex ? 'active' : ''} onClick={() => clickHandler(item.question, answer, answerIndex, questionIndex)} data-testid="answers-option">{answer}</li>
+                                <li key={answerIndex} className={currentIndex === answerIndex ? 'active' : ''} onClick={() => clickHandler(item.question, answer, answerIndex, questionIndex, item.correctAnswer)} data-testid="answers-option">{answer}</li>
                                 )
                             })
                         }

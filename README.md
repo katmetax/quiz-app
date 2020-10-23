@@ -6,7 +6,7 @@
 
 [X]  Add multiple steps for the questions to show
 
-[ ]  Create file with correct answers to map against
+[X]  Create file with correct answers to map against
 
 [ ]  Create results page
 

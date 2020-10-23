@@ -3,6 +3,7 @@ declare interface questionResponse {
     answer: string;
     questionNo: number;
     answerIndex: number;
+    answeredCorrectly: boolean;
 }
 
 declare interface saveAnswerInterface {
