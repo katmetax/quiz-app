@@ -1,21 +1,7 @@
 import React from 'react';
 import './App.scss';
 import QuizComponent from './components/quizComponent';
-
-const questionData = [
-  {
-      question: 'What is the capital of Canada?',
-      answers: ['Vancouver', 'Ottawa', 'Toronto']
-  },
-  {
-      question: 'Which planet in our solar system has the most amount of moons?',
-      answers: ['Saturn', 'Jupiter', 'Neptune']
-  },
-  {
-    question: 'What programming language was named after a TV show?',
-    answers: ['Ruby', 'Python', 'Elixir']
-}
-];
+import { questionData } from './questionData';
 
 const App = () => {
   return (

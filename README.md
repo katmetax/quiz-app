@@ -12,7 +12,7 @@
 
 [X]  Add ability to go back/forward on questions with their retained answers
 
-[ ]  Move question data out of App file
+[X]  Move question data out of App file
 
 **Redux**
 
