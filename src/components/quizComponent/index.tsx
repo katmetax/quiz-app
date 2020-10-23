@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { saveAnswer } from '../../store/actions';
+import ResultsPage from '../resultsPage';
 
 import './styles.scss';
 
@@ -54,6 +55,12 @@ const QuizComponent = ( { questionData }: quizComponentProps ) => {
         getSelectedIndex(questionNo);
     };
 
+    const userWon = () => {
+        const halfOrMoreCorrectAnswers = (quizState as any).quiz.filter((quizItems:any) => quizItems.answeredCorrectly === true).length >= (questionData.length / 2);
+
+        return halfOrMoreCorrectAnswers ? 'won' : 'lost';
+    }
+
     return (
         <div className="quiz-container" data-testid="question-root">
             {
@@ -78,6 +85,10 @@ const QuizComponent = ( { questionData }: quizComponentProps ) => {
                             {(pageNumber + 1) < questionData.length &&
                                 <button className="next-button" onClick={() => nextBtnClick(questionIndex + 1)}>Next</button>
                             }
+                            {pageNumber + 1 === questionData.length &&
+                                <button className="next-button" onClick={() => alert(`you ${userWon()}`)}>See results?</button>
+                            }
+
                         </div>
                         </>
                     )

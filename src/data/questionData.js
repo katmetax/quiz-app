@@ -13,5 +13,10 @@ export const questionData = [
         question: 'What programming language was named after a TV show?',
         answers: ['Ruby', 'Python', 'Elixir'],
         correctAnswer: 'Python'
+    },
+    {
+        question: 'What does an ichthyophobe have a fear of?',
+        answers: ['Fish', 'Insects', 'The number five'],
+        correctAnswer: 'Fish'
     }
 ];

@@ -14,6 +14,8 @@
 
 [X]  Move question data out of App file
 
+[ ] Add validation to prev/next buttons
+
 **Redux**
 
 [X]  Handle multiple questions and dedupe logic in Redux reducer
