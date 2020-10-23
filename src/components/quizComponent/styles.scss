@@ -11,4 +11,29 @@
     .active {
         color: red;
     }
+
+    .control-buttons {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        width: 720px;
+        margin-top: 100px;
+    }
+
+    .back-button {
+        align-self: flex-start;
+        padding: 20px;
+        width: 30%;
+        min-width: 200px;
+        cursor: pointer;
+    }
+
+    .next-button {
+        align-self: flex-end;
+        width: 30%;
+        min-width: 200px;
+        padding: 20px;
+        margin-left: auto;
+        cursor: pointer;
+    }
 }

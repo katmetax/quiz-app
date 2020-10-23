@@ -10,7 +10,7 @@
 
 [ ]  Create results page
 
-[ ]  Add ability to go back/forward on questions with their retained answers
+[X]  Add ability to go back/forward on questions with their retained answers
 
 [ ]  Move question data out of App file
 

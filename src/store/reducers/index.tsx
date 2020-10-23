@@ -1,14 +1,14 @@
 import { SAVE_ANSWER } from "../constants";
 
-interface initialState {
+interface quizReducer {
     quiz: questionResponse[];
 }
 
-const initialState: initialState = { quiz: [] };
+const initialState: quizReducer = { quiz: [] };
 
 // TODO: Refactor reducer
 
-const rootReducer = (state = initialState, action: saveAnswerInterface) => {
+const rootReducer = (state = initialState, action: saveAnswerInterface):quizReducer  => {
     if ( action.type === SAVE_ANSWER ) {
         const newArray = state.quiz.concat(action.payload);
 
