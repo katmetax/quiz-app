@@ -45,13 +45,8 @@ const QuizComponent = ( { questionData }: quizComponentProps ) => {
         return setIndex(-1);
     };
 
-    const nextBtnClick = (questionNo: number) => {
-        setPageNumber(pageNumber + 1);
-        getSelectedIndex(questionNo);
-    };
-
-    const backBtnClick = (questionNo: number) => {
-        setPageNumber(pageNumber - 1);
+    const btnClick = (context: string, questionNo: number) => {
+        setPageNumber(pageNumber + (context === 'next' ? + 1 :  -1));
         getSelectedIndex(questionNo);
     };
 
@@ -80,15 +75,14 @@ const QuizComponent = ( { questionData }: quizComponentProps ) => {
                         </ul>
                         <div className="control-buttons">
                             {(pageNumber + 1) > 1 &&
-                                <button className="back-button" onClick={() => backBtnClick(questionIndex - 1)}>Back</button>
+                                <button className="back-button" onClick={() => btnClick('prev', questionIndex - 1)} data-testid="back-btn">Back</button>
                             }
                             {(pageNumber + 1) < questionData.length &&
-                                <button className="next-button" onClick={() => nextBtnClick(questionIndex + 1)}>Next</button>
+                                <button className="next-button" onClick={() => btnClick('next', questionIndex + 1)} data-testid="next-btn">Next</button>
                             }
                             {pageNumber + 1 === questionData.length &&
-                                <button className="next-button" onClick={() => alert(`you ${userWon()}`)}>See results?</button>
+                                <button className="next-button" onClick={() => alert(`you ${userWon()}`)} data-testid="results-btn">See results?</button>
                             }
-
                         </div>
                         </>
                     )
