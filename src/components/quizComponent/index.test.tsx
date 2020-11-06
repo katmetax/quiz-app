@@ -90,9 +90,43 @@ describe('QuizComponent', () => {
 
             expect(component.find('[data-testid="question-root"] h3').text()).toContain('Question 1');
         });
+
+        test.skip('click on the results button should run results fn', () => {
+            const component = mount(
+                <Provider store={store}>
+                <QuizComponent questionData={mockQuizData} />
+                </Provider>);
+            window.alert = jest.fn();
+            component.find('[data-testid="next-btn"]').simulate('click');
+            component.find('[data-testid="results-btn"]').simulate('click');
+        
+            expect(window.alert).toHaveBeenCalled();
+        });
     });
 
+    test('if an answer is not found in store then do not pre-select an answer', () => {
+        const mockStoreDataNoAnswers = {
+            quiz: [
+                {
+                    question: 'Question 1',
+                    answer: 'A',
+                    questionNo: 0,
+                    answerIndex: 0,
+                    answeredCorrectly: false
+                }
+            ]
+        };
+        const store = mockStore(mockStoreDataNoAnswers);
+        const component = mount(
+            <Provider store={store}>
+            <QuizComponent questionData={mockQuizData} />
+            </Provider>);
+        component.find('[data-testid="next-btn"]').simulate('click');
+        const answers = component.find('[data-testid="answers-option"]');
+        console.log(answers.debug())
 
-
-
+        answers.forEach((answer) => {
+            expect(answer.hasClass('active')).toBe(false);
+        })
+    });
 });
