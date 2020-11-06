@@ -6,10 +6,6 @@ import configureStore from 'redux-mock-store';
 import QuizComponent from './';
 import { mount } from 'enzyme';
 
-const setState = jest.fn();
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-const useStateMock: any = (initState: any) => [initState, setState];
-
 const mockStoreData = {
     quiz: [
         {
@@ -94,28 +90,9 @@ describe('QuizComponent', () => {
 
             expect(component.find('[data-testid="question-root"] h3').text()).toContain('Question 1');
         });
-
-        test.skip('click on back button should bring up previous set of questions', () => {
-            const component = mount(
-                <Provider store={store}>
-                <QuizComponent questionData={mockQuizData} />
-                </Provider>);
-            component.find('[data-testid="results-btn"]').simulate('click');
-        });
     });
 
-    test('getSelectedIndex sets a negative index because no matching question found in quiz state', () => {
-        jest.spyOn(React, 'useState').mockImplementation(useStateMock);
-        const component = mount(
-            <Provider store={store}>
-            <QuizComponent questionData={mockQuizData} />
-            </Provider>);
-        component.find('[data-testid="next-btn"]').simulate('click');
 
-        expect(component.useStateMock()).toEqual({ currentIndex: -1 });
-    });
 
-    test('getSelectedIndex sets a positive index because matching question found in quiz state', () => {
 
-    });
 });
