@@ -8,13 +8,15 @@
 
 [X]  Create file with correct answers to map against
 
-[ ]  Create results page
+[X]  Create results page
 
 [X]  Add ability to go back/forward on questions with their retained answers
 
 [X]  Move question data out of App file
 
 [ ] Add validation to prev/next buttons
+
+[ ] Add error message to results page if user navigates straight to it
 
 **Redux**
 
