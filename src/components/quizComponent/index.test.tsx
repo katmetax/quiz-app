@@ -123,7 +123,6 @@ describe('QuizComponent', () => {
             </Provider>);
         component.find('[data-testid="next-btn"]').simulate('click');
         const answers = component.find('[data-testid="answers-option"]');
-        console.log(answers.debug())
 
         answers.forEach((answer) => {
             expect(answer.hasClass('active')).toBe(false);
