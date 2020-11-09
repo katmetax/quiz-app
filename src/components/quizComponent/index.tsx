@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 import { saveAnswer } from '../../store/actions';
 
@@ -76,7 +77,7 @@ const QuizComponent = ( { questionData }: quizComponentProps ) => {
                                 <button className="next-button" onClick={() => btnClick('next', questionIndex + 1)} data-testid="next-btn">Next</button>
                             }
                             {pageNumber + 1 === questionData.length &&
-                                <a href="/results-page"><button className="next-button" data-testid="results-btn">See results?</button></a>
+                                <Link to="/results-page"><button className="next-button" data-testid="results-btn">See results?</button></Link>
                             }
                             </div>
                             </>
