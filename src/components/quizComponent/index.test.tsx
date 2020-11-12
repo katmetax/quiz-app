@@ -1,6 +1,6 @@
 import 'jsdom-global/register';
 import { useSelector, useDispatch } from 'react-redux';
-import { render, shallow } from 'enzyme';
+import { shallow } from 'enzyme';
 import React from 'react';
 
 import QuizComponent from './';
@@ -53,15 +53,6 @@ describe('QuizComponent', () => {
     afterEach(() => {
         jest.clearAllMocks();
     })
-    
-    test('click on an answer should trigger clickHandler', () => {
-        const clickHandler = jest.fn();
-        const component = shallow(<QuizComponent questionData={mockQuizData} />);
-        const answer = component.find('[data-testid="answers-option"]').first();
-        answer.props().onClick = clickHandler();
-        answer.simulate('click');
-        expect(clickHandler).toHaveBeenCalled();
-    });
 
     test('click on an answer should make the class active', () => {
         const component = shallow(<QuizComponent questionData={mockQuizData} />);
