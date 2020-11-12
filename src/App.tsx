@@ -9,12 +9,12 @@ const App = () => {
   return (
     <div className="App">
       <header className="App-header">
-        <Switch>
-          <Route path="/" exact render={(props) => (
-            <QuizComponent {...props} questionData={questionData} />
-          )} />
-          <Route path="/results-page" component={ResultsPage} />
-        </Switch>
+          <Switch>
+            <Route path="/" exact render={(props) => (
+              <QuizComponent {...props} questionData={questionData} />
+            )} />
+            <Route path="/results-page" component={ResultsPage} />
+          </Switch>
       </header>
     </div>
   );
