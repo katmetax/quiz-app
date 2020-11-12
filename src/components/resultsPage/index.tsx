@@ -28,13 +28,12 @@ const ResultsPage = () => {
     const { result, correctAnswersNum, allQuestionsNum } = userQuizResults();
     
     return (
-        <div className="results-page-container">
+        <div className="results-page-container" data-test="results-container">
             <h1>You {result}!</h1>
             <p>You got {correctAnswersNum} out of {allQuestionsNum} questions right!</p>
             <Link to="/"><button className="retake-button" data-testid="retake-btn">Take the quiz again?</button></Link>
         </div>
         );
-    }
-    
-    export default ResultsPage;
-    
+}
+
+export default ResultsPage;
