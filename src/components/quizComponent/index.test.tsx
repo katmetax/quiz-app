@@ -1,12 +1,17 @@
 import 'jsdom-global/register';
+import { useSelector, useDispatch } from 'react-redux';
+import { render, shallow } from 'enzyme';
 import React from 'react';
-import { Provider } from 'react-redux';
-import { BrowserRouter } from 'react-router-dom';
-import configureStore from 'redux-mock-store';
 
 import QuizComponent from './';
-import { mount } from 'enzyme';
 
+jest.mock('react-router-dom', () => ({
+    Link: jest.fn()
+}));
+jest.mock("react-redux", () => ({
+    useSelector: jest.fn(fn => fn()),
+    useDispatch: jest.fn()
+}));
 
 const mockStoreData = {
     quiz: [
@@ -40,30 +45,26 @@ const mockQuizData = [
     }
 ];
 
-const mockStore = configureStore();
-
 describe('QuizComponent', () => {
-    const store = mockStore(mockStoreData);
+    beforeEach(() => {
+        (useSelector as any).mockImplementation((cb:any) => cb(mockStoreData));
+        (useDispatch as any).mockReturnValue(jest.fn());
+    });
+    afterEach(() => {
+        jest.clearAllMocks();
+    })
     
     test('click on an answer should trigger clickHandler', () => {
         const clickHandler = jest.fn();
-        const component = mount(<BrowserRouter>
-            <Provider store={store}>
-            <QuizComponent questionData={mockQuizData} />
-            </Provider></BrowserRouter>);
+        const component = shallow(<QuizComponent questionData={mockQuizData} />);
         const answer = component.find('[data-testid="answers-option"]').first();
-        
         answer.props().onClick = clickHandler();
         answer.simulate('click');
-        
         expect(clickHandler).toHaveBeenCalled();
     });
 
     test('click on an answer should make the class active', () => {
-        const component = mount(<BrowserRouter>
-            <Provider store={store}>
-            <QuizComponent questionData={mockQuizData} />
-            </Provider></BrowserRouter>);
+        const component = shallow(<QuizComponent questionData={mockQuizData} />);
         let answers = component.find('[data-testid="answers-option"]');
         answers.at(1).simulate('click');
         answers = component.find('[data-testid="answers-option"]');
@@ -73,21 +74,14 @@ describe('QuizComponent', () => {
 
     describe('Button clicks', () => {
         test('click on next button should bring up next set of questions', () => {
-            const component = mount(
-                <BrowserRouter>
-                <Provider store={store}>
-                <QuizComponent questionData={mockQuizData} />
-                </Provider></BrowserRouter>);
+            const component = shallow(<QuizComponent questionData={mockQuizData} />);
             component.find('[data-testid="next-btn"]').simulate('click');
             
             expect(component.find('[data-testid="question-root"] h3').text()).toContain('Question 2');
         });
 
         test('click on back button should bring up previous set of questions', () => {
-            const component = mount(<BrowserRouter>
-                <Provider store={store}>
-                <QuizComponent questionData={mockQuizData} />
-                </Provider></BrowserRouter>);
+            const component = shallow(<QuizComponent questionData={mockQuizData} />);
             component.find('[data-testid="next-btn"]').simulate('click');
             component.find('[data-testid="back-btn"]').simulate('click');
 
@@ -107,11 +101,8 @@ describe('QuizComponent', () => {
                 }
             ]
         };
-        const store = mockStore(mockStoreDataNoAnswers);
-        const component = mount(<BrowserRouter>
-            <Provider store={store}>
-            <QuizComponent questionData={mockQuizData} />
-            </Provider></BrowserRouter>);
+        (useSelector as any).mockReturnValue(mockStoreDataNoAnswers);
+        const component = shallow(<QuizComponent questionData={mockQuizData} />);
         component.find('[data-testid="next-btn"]').simulate('click');
         const answers = component.find('[data-testid="answers-option"]');
 
