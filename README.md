@@ -16,8 +16,6 @@
 
 [ ] Add validation to prev/next buttons
 
-[ ] Add error message to results page if user navigates straight to it
-
 **Redux**
 
 [X]  Handle multiple questions and dedupe logic in Redux reducer
@@ -30,7 +28,7 @@
 
 [X]  Add Jest test for quiz component
 
-[ ]  Continue to write tests for additional components
+[X]  Continue to write tests for additional components
 
 **Typescript**
 
