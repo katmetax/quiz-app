@@ -74,7 +74,7 @@ const QuizComponent = ( { questionData }: quizComponentProps ) => {
                                 <button className="back-button" onClick={() => btnClick('prev', questionIndex - 1)} data-testid="back-btn">Back</button>
                             }
                             {(pageNumber + 1) < questionData.length &&
-                                <button className="next-button" onClick={() => btnClick('next', questionIndex + 1)} data-testid="next-btn">Next</button>
+                                <button className="next-button" onClick={() => btnClick('next', questionIndex + 1)} disabled={currentIndex === -1} data-testid="next-btn">Next</button>
                             }
                             {pageNumber + 1 === questionData.length &&
                                 <Link to="/results-page"><button className="next-button" data-testid="results-btn">See results?</button></Link>

@@ -14,7 +14,7 @@
 
 [X]  Move question data out of App file
 
-[ ] Add validation to prev/next buttons
+[X] Add validation to prev/next buttons
 
 **Redux**
 
