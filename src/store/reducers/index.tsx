@@ -4,7 +4,7 @@ interface quizReducer {
     quiz: questionResponse[];
 }
 
-const initialState: quizReducer = { quiz: [] };
+export const initialState: quizReducer = { quiz: [] };
 
 // TODO: Refactor reducer
 

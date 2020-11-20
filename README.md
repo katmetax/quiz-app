@@ -48,7 +48,8 @@
 
 **SSR**
 
-[ ]  Utilise express JS or Next JS to hydrate 
+[ ]  Utilise express JS or Next JS to hydrate OR
+[ ]  Utilise this article https://medium.com/spreetail-engineering/approaching-server-side-rendering-in-an-existing-react-redux-application-2c403819a231
 
 ***
 ***
