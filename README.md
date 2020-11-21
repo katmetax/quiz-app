@@ -16,13 +16,15 @@
 
 [X] Add validation to prev/next buttons
 
+[ ] Re-do layout/styles
+
 **Redux**
 
 [X]  Handle multiple questions and dedupe logic in Redux reducer
 
 [ ]  Create multiple reducers & combine them
 
-[ ]  Add tests for Redux actions & reducers
+[X]  Add tests for Redux actions & reducers
 
 **Jest**
 
@@ -56,7 +58,7 @@
 
 **check coverage**
 
-`npx jest --coverage --no-cache`
+`yarn test:coverage`
 
 ***
 ***
