@@ -51,14 +51,14 @@ const QuizComponent = ( { questionData }: quizComponentProps ) => {
     };
     
     return (
-        <>
+        <div>
         <h1>Quiz App</h1>
         <div className="quiz-container" data-testid="question-root">
         {
             questionData.map((item: any, questionIndex: number) => {
                 if (questionIndex === pageNumber) {
                     return (
-                        <>
+                        <div key={questionIndex}>
                         <h3>{questionIndex + 1}. {item.question}</h3>
                         <ul data-testid="answers-list">
                         { 
@@ -74,13 +74,13 @@ const QuizComponent = ( { questionData }: quizComponentProps ) => {
                                 <button className="back-button" onClick={() => btnClick('prev', questionIndex - 1)} data-testid="back-btn">Back</button>
                             }
                             {(pageNumber + 1) < questionData.length &&
-                                <button className="next-button" onClick={() => btnClick('next', questionIndex + 1)} data-testid="next-btn">Next</button>
+                                <button className="next-button" onClick={() => btnClick('next', questionIndex + 1)} disabled={currentIndex === -1} data-testid="next-btn">Next</button>
                             }
                             {pageNumber + 1 === questionData.length &&
                                 <Link to="/results-page"><button className="next-button" data-testid="results-btn">See results?</button></Link>
                             }
                             </div>
-                            </>
+                            </div>
                             )
                         }
                         
@@ -88,7 +88,7 @@ const QuizComponent = ( { questionData }: quizComponentProps ) => {
                     })
                 }
                 </div>
-                </>
+                </div>
                 );
             }
             

@@ -14,7 +14,9 @@
 
 [X]  Move question data out of App file
 
-[ ] Add validation to prev/next buttons
+[X] Add validation to prev/next buttons
+
+[ ] Re-do layout/styles
 
 **Redux**
 
@@ -22,7 +24,7 @@
 
 [ ]  Create multiple reducers & combine them
 
-[ ]  Add tests for Redux actions & reducers
+[X]  Add tests for Redux actions & reducers
 
 **Jest**
 
@@ -48,14 +50,15 @@
 
 **SSR**
 
-[ ]  Utilise express JS or Next JS to hydrate 
+[ ]  Utilise express JS or Next JS to hydrate OR
+[ ]  Utilise this article https://medium.com/spreetail-engineering/approaching-server-side-rendering-in-an-existing-react-redux-application-2c403819a231
 
 ***
 ***
 
 **check coverage**
 
-`npx jest --coverage --no-cache`
+`yarn test:coverage`
 
 ***
 ***
