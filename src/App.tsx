@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { FunctionComponent } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import './App.scss';
 import QuizComponent from './components/quizComponent';
 import ResultsPage from './components/resultsPage';
 import { questionData } from './data/questionData';
 
-const App = () => {
+const App: FunctionComponent = () => {
   return (
     <div className="App">
       <header className="App-header">
