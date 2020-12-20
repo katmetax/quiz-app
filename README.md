@@ -2,66 +2,70 @@
 
 **General**
 
-[X]  Add more quiz questions
+[X] Add more quiz questions
 
-[X]  Add multiple steps for the questions to show
+[X] Add multiple steps for the questions to show
 
-[X]  Create file with correct answers to map against
+[X] Create file with correct answers to map against
 
-[X]  Create results page
+[X] Create results page
 
-[X]  Add ability to go back/forward on questions with their retained answers
+[X] Add ability to go back/forward on questions with their retained answers
 
-[X]  Move question data out of App file
+[X] Move question data out of App file
 
 [X] Add validation to prev/next buttons
 
 [ ] Re-do layout/styles
 
+[ ] See results button should be disabled if last question has not been answered
+
 **Redux**
 
-[X]  Handle multiple questions and dedupe logic in Redux reducer
+[X] Handle multiple questions and dedupe logic in Redux reducer
 
-[ ]  Create multiple reducers & combine them
+[ ] Create multiple reducers & combine them
 
-[X]  Add tests for Redux actions & reducers
+[X] Add tests for Redux actions & reducers
 
 **Jest**
 
-[X]  Add Jest test for quiz component
+[X] Add Jest test for quiz component
 
-[X]  Continue to write tests for additional components
+[X] Continue to write tests for additional components
 
 **Typescript**
 
-[ ]  Add stricter typing
+[ ] Add stricter typing
 
 **Webpack**
 
-[ ]  Add Webpack file 4.0
+[ ] Add Webpack file 4.0
 
-[ ]  Add environment variables
+[ ] Add environment variables
 
-[ ]  Create dev server
+[ ] Create dev server
 
-[ ]  Use loaders for SCSS, TSX, JS
+[ ] Use loaders for SCSS, TSX, JS
 
-[ ]  Use plugins such as HTMLWebpackPlugin, CSS min
+[ ] Use plugins such as HTMLWebpackPlugin, CSS min
 
 **SSR**
 
-[ ]  Utilise express JS or Next JS to hydrate OR
-[ ]  Utilise this article https://medium.com/spreetail-engineering/approaching-server-side-rendering-in-an-existing-react-redux-application-2c403819a231
+[ ] Utilise express JS or Next JS to hydrate OR
+[ ] Utilise this article https://medium.com/spreetail-engineering/approaching-server-side-rendering-in-an-existing-react-redux-application-2c403819a231
 
-***
-***
+---
+
+---
 
 **check coverage**
 
 `yarn test:coverage`
 
-***
-***
+---
+
+---
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
