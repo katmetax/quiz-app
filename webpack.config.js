@@ -5,7 +5,9 @@ const nodeExternals = require("webpack-node-externals");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
-  entry: "./server/index.tsx",
+  entry: {
+    main: "./server/index.tsx",
+  },
   target: "node",
   externals: [nodeExternals()],
   output: {
@@ -13,17 +15,32 @@ module.exports = {
     filename: "index.js",
   },
   resolve: {
-    extensions: [".ts", ".tsx", ".js"],
+    extensions: [".ts", ".tsx", ".js", ".scss", ".css"],
   },
   module: {
     rules: [
       {
         test: /\.(tsx|ts|js)$/,
+        exclude: /node_modules/,
         use: "babel-loader",
       },
       {
         test: /\.s[ac]ss$/i,
-        use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
+        exclude: /node_modules/,
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+          },
+          {
+            loader: "css-loader",
+            options: {
+              modules: true,
+            },
+          },
+          {
+            loader: "sass-loader",
+          },
+        ],
       },
     ],
   },

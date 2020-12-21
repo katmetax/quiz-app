@@ -14,7 +14,8 @@ const PORT = 8000;
 
 const app = express();
 
-app.use("^/$", (req, res) => {
+app.use("/static", express.static(path.resolve(__dirname, "../build/static")));
+app.get("*", (req, res) => {
   const context = {};
   fs.readFile(path.resolve("./build/index.html"), "utf-8", (err, data) => {
     if (err) {
@@ -36,7 +37,7 @@ app.use("^/$", (req, res) => {
   });
 });
 
-app.use(express.static(path.resolve(__dirname, "../", "build")));
+app.use(express.static(path.resolve(__dirname, "../build")));
 
 app.listen(PORT, () => {
   console.log(`App launched on ${PORT}`);
